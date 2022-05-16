@@ -1,9 +1,6 @@
 package com.company;
 
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Enumeration;
 import java.util.List;
 
 public class Main {
@@ -27,8 +24,8 @@ public class Main {
 //        puzSort(numbers);
 //        puzSortShake(numbers);
 //        minNum(numbers);
-//        sortChoice(numbers);
-        quickSort(numbers, 0, numbers.size() - 1);
+        sortChoice(numbers);
+//        quickSort(numbers, 0, numbers.size() - 1);
         System.out.println(numbers);
         long t2 = System.currentTimeMillis();
         System.out.println("Lead time = " + (t2 - t1));
@@ -130,22 +127,23 @@ public class Main {
 
         int pivot = list.get(from);
         while (leftIndex <= rightIndex) {
-             while (list.get(leftIndex) < pivot) {
-                 leftIndex++;
-             }
+            while (list.get(leftIndex) < pivot) {
+                leftIndex++;
+            }
 
-             while (list.get(rightIndex) > pivot) {
-                 rightIndex--;
-             }
+            while (list.get(rightIndex) > pivot) {
+                rightIndex--;
+            }
 
-             if (leftIndex <= rightIndex) {
-                 swap(list, rightIndex, leftIndex);
-                 leftIndex++;
-                 rightIndex--;
-             }
+            if (leftIndex <= rightIndex) {
+                swap(list, rightIndex, leftIndex);
+                leftIndex++;
+                rightIndex--;
+            }
         }
         return leftIndex;
     }
+
     public static void swap(List<Integer> list, int index1, int index2) {
         int temp = list.get(index1);
         list.set(index1, list.get(index2));
