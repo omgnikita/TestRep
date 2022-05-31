@@ -12,5 +12,6 @@ public class Main {
 
         Radio radio = new Radio();
         Remote remote1 = new Remote(radio);
+        remote1.channelDown();
     }
 }
